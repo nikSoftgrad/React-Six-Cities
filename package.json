@@ -1,8 +1,8 @@
 {
-  "name": "guess-melody-6",
+  "name": "react-six-cities",
   "version": "1.0.0",
   "private": true,
-  "description": "Демо-проект «Угадай мелодию» для курса «React. Разработка сложных клиентских приложений, 6-й поток»",
+  "description": "React six-cities",
   "scripts": {
     "build": "webpack --mode production",
     "start": "webpack-dev-server",
