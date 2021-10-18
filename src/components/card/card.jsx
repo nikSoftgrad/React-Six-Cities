@@ -1,12 +1,13 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const Card = (props) => {
-  const {price, title, type, rating, img, premium} = props.offer;
+  const {price, title, type, rating, img, is_premium: isPremium, is_favorite: isFavorite} = props.offer;
 
   return (
     <article className="cities__place-card place-card">
       {
-        premium &&
+        isPremium &&
         <div className="place-card__mark">
           <span>Premium</span>
         </div>
@@ -28,7 +29,7 @@ const Card = (props) => {
             <b className="place-card__price-value">€{price}</b>
             <span className="place-card__price-text">/&nbsp;night</span>
           </div>
-          <button className="place-card__bookmark-button button" type="button">
+          <button className={`place-card__bookmark-button button ${isFavorite ? `place-card__bookmark-button--active` : ``}`} type="button">
             <svg className="place-card__bookmark-icon" width={18} height={19}>
               <use xlinkHref="#icon-bookmark" />
             </svg>
@@ -51,5 +52,19 @@ const Card = (props) => {
   );
 };
 
+Card.propTypes = {
+  offer: PropTypes.arrayOf(
+      PropTypes.shape({
+        "id": PropTypes.number.isRequired,
+        "price": PropTypes.number.isRequired,
+        "title": PropTypes.string.isRequired,
+        "type": PropTypes.string.isRequired,
+        "img": PropTypes.string.isRequired,
+        "rating": PropTypes.number.isRequired,
+        "is_favorite": PropTypes.bool.isRequired,
+        "is_premium": PropTypes.bool.isRequired,
+      })
+  )
+};
 
 export default Card;

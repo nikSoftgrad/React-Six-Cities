@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "../card/card";
+import PropTypes from "prop-types";
 
 const MainScreen = (props) => {
   const {offers} = props;
@@ -105,6 +106,21 @@ const MainScreen = (props) => {
       </main>
     </div>
   );
+};
+
+MainScreen.propTypes = {
+  offers: PropTypes.arrayOf(
+      PropTypes.shape({
+        "id": PropTypes.number.isRequired,
+        "price": PropTypes.number.isRequired,
+        "title": PropTypes.string.isRequired,
+        "type": PropTypes.string.isRequired,
+        "img": PropTypes.string.isRequired,
+        "rating": PropTypes.number.isRequired,
+        "is_favorite": PropTypes.bool.isRequired,
+        "is_premium": PropTypes.bool.isRequired,
+      })
+  )
 };
 
 export default MainScreen;
