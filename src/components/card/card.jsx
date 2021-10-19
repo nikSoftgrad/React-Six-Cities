@@ -53,18 +53,16 @@ const Card = (props) => {
 };
 
 Card.propTypes = {
-  offer: PropTypes.arrayOf(
-      PropTypes.shape({
-        "id": PropTypes.number.isRequired,
-        "price": PropTypes.number.isRequired,
-        "title": PropTypes.string.isRequired,
-        "type": PropTypes.string.isRequired,
-        "img": PropTypes.string.isRequired,
-        "rating": PropTypes.number.isRequired,
-        "is_favorite": PropTypes.bool.isRequired,
-        "is_premium": PropTypes.bool.isRequired,
-      })
-  )
+  offer: PropTypes.shape({
+    "id": PropTypes.number.isRequired,
+    "price": PropTypes.number.isRequired,
+    "title": PropTypes.string.isRequired,
+    "type": PropTypes.string.isRequired,
+    "img": PropTypes.string.isRequired,
+    "rating": PropTypes.number.isRequired,
+    "is_favorite": PropTypes.bool.isRequired,
+    "is_premium": PropTypes.bool.isRequired,
+  })
 };
 
 export default Card;

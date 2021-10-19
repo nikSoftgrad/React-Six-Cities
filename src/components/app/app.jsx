@@ -1,6 +1,10 @@
 import React from "react";
-import MainScreen from "../main-screen/main-screen";
+import {BrowserRouter, Switch, Route} from "react-router-dom";
 import PropTypes from "prop-types";
+import MainScreen from "../main-screen/main-screen";
+// import AuthScreen from "../auth-screen/auth-screen";
+// import FavoriteScreen from "../favorites-screen/favorites-screen";
+// import RoomScreen from "../room-screen/room-screen";
 
 const App = (props) => {
   const {offers} = props;
