@@ -2,7 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Card = (props) => {
-  const {price, title, type, rating, img, is_premium: isPremium, is_favorite: isFavorite} = props.offer;
+  const {offer} = props;
+  const {price, title, type, rating, img, is_premium: isPremium, is_favorite: isFavorite} = offer;
 
   return (
     <article className="cities__place-card place-card">
