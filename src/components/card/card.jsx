@@ -1,13 +1,19 @@
-import React from "react";
+import React, {useState} from "react";
 import offersPropsTypes from "../../prop-types/offers";
 import Rating from "../elements/rating";
 
 const Card = (props) => {
   const {offer} = props;
   const {name, price, rating, type, isFavorite, isPremium, previewImage} = offer;
+  const [hover, setHover] = useState({
+    isActive: false
+  });
+
+  const onMouseEnter = () => setHover({...hover, isActive: true});
+  const onMouseLeave = () => setHover({...hover, isActive: false});
 
   return (
-    <article className="cities__place-card place-card">
+    <article className="cities__place-card place-card" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       {
         isPremium && (
           <div className="place-card__mark">
