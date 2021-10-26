@@ -1,7 +1,10 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import PropTypes from "prop-types";
+import reviewsPropsTypes from "../../../prop-types/reviews";
 
-const RoomScreen = () => {
+const RoomScreen = (props) => {
+  const {reviews} = props;
 
   return (
     <React.Fragment>
@@ -485,6 +488,10 @@ const RoomScreen = () => {
       </div>
     </React.Fragment>
   );
+};
+
+RoomScreen.propTypes = {
+  reviews: PropTypes.arrayOf(reviewsPropsTypes).isRequired,
 };
 
 export default RoomScreen;
