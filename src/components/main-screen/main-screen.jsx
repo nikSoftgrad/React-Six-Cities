@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import Card from "../card/card";
+import OffersList from "../offers-list/offers-list";
 import PropTypes from "prop-types";
 
 const MainScreen = (props) => {
@@ -95,9 +96,7 @@ const MainScreen = (props) => {
                   <li className="places__option" tabIndex="0">Top rated first</li>
                 </ul>
               </form>
-              <div className="cities__places-list places__list tabs__content">
-                {offers.map((card) => <Card key={card.id} offer={card}/>)}
-              </div>
+              <OffersList offers={offers}/>
             </section>
             <div className="cities__right-section">
               <section className="cities__map map"></section>
