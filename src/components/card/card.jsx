@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import {Link} from "react-router-dom";
 import offersPropsTypes from "../../prop-types/offers";
 import Rating from "../elements/rating";
 
@@ -48,7 +49,7 @@ const Card = (props) => {
           <Rating rating={rating} />
         </div>
         <h2 className="place-card__name">
-          <a href="#">{name}</a>
+          <Link to="/offer:id">{name}</Link>
         </h2>
         <p className="place-card__type">{type}</p>
       </div>
