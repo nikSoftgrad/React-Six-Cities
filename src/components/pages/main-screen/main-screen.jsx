@@ -1,14 +1,13 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import Card from "../card/card";
-import OffersList from "../offers-list/offers-list";
+import OffersList from "../../offers-list/offers-list";
 import PropTypes from "prop-types";
+import offersPropsTypes from "../../../prop-types/offers";
 
 const MainScreen = (props) => {
   const {offers} = props;
 
   return (
-
     <div className="page page--gray page--main">
       <header className="header">
         <div className="container">
@@ -109,18 +108,7 @@ const MainScreen = (props) => {
 };
 
 MainScreen.propTypes = {
-  offers: PropTypes.arrayOf(
-      PropTypes.shape({
-        "id": PropTypes.number.isRequired,
-        "price": PropTypes.number.isRequired,
-        "title": PropTypes.string.isRequired,
-        "type": PropTypes.string.isRequired,
-        "img": PropTypes.string.isRequired,
-        "rating": PropTypes.number.isRequired,
-        "is_favorite": PropTypes.bool.isRequired,
-        "is_premium": PropTypes.bool.isRequired,
-      })
-  )
+  offers: PropTypes.arrayOf(offersPropsTypes).isRequired,
 };
 
 export default MainScreen;

@@ -1,55 +1,161 @@
-const OFFERS = [
+export const OFFERS = [
   {
-    "price": 120,
-    "title": `Beautiful luxurious apartment at great location`,
-    "type": `Apartment`,
-    "img": `img/apartment-01.jpg`,
-    "rating": 80,
-    "is_favorite": false,
-    "is_premium": true,
-    "id": 1,
+    id: 1,
+    name: `Beautiful luxurious apartment at great location`,
+    rating: 4,
+    price: 120,
+    type: `Apartment`,
+    isFavorite: false,
+    isPremium: false,
+    previewImage: `img/1.png`,
+
+    bedrooms: 3,
+    maxAdults: 4,
+    description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.`,
+    goods: [`Heating`, `Kitchen`, `Cable TV`, `Washing machine`, `Coffee machine`, `Dishwasher`],
+
+    city: {
+      name: `Amsterdam`,
+      location: {
+        lat: 52.370216,
+        lng: 4.895168,
+        zoom: 10,
+      },
+    },
+
+    host: {
+      avatar: `img/1.png`,
+      id: 3,
+      isPro: true,
+      name: `Angelina`,
+    },
+
+    images: [`img/1.png`, `img/2.png`],
+
+    location: {
+      lat: 52.35514938496378,
+      lng: 4.673877537499948,
+      zoom: 8,
+    },
   },
+
   {
-    "price": 80,
-    "title": `Wood and stone place`,
-    "type": `Private room`,
-    "img": `img/room.jpg`,
-    "rating": 80,
-    "is_favorite": true,
-    "is_premium": false,
-    "id": 2,
+    id: 2,
+    name: `Wood and stone place`,
+    rating: 5,
+    price: 80,
+    type: `Private room`,
+    isFavorite: true,
+    isPremium: true,
+    previewImage: `img/1.png`,
+
+    bedrooms: 3,
+    maxAdults: 4,
+    description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.`,
+    goods: [`Heating`, `Kitchen`, `Cable TV`, `Washing machine`, `Coffee machine`, `Dishwasher`],
+
+    city: {
+      name: `Amsterdam`,
+      location: {
+        lat: 52.370216,
+        lng: 4.895168,
+        zoom: 10,
+      },
+    },
+
+    host: {
+      avatar: `img/1.png`,
+      id: 3,
+      isPro: true,
+      name: `Angelina`,
+    },
+
+    images: [`img/1.png`, `img/2.png`],
+
+    location: {
+      lat: 52.35514938496378,
+      lng: 4.673877537499948,
+      zoom: 8,
+    },
   },
+
   {
-    "price": 132,
-    "title": `Canal View Prinsengracht`,
-    "type": `Apartment`,
-    "img": `img/apartment-02.jpg`,
-    "rating": 80,
-    "is_favorite": false,
-    "is_premium": false,
-    "id": 3,
+    id: 3,
+    name: `Canal View Prinsengracht`,
+    rating: 3,
+    price: 132,
+    type: `Apartment`,
+    isFavorite: false,
+    isPremium: false,
+    previewImage: `img/1.png`,
+
+    bedrooms: 3,
+    maxAdults: 4,
+    description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.`,
+    goods: [`Heating`, `Kitchen`, `Cable TV`, `Washing machine`, `Coffee machine`, `Dishwasher`],
+
+    city: {
+      name: `Amsterdam`,
+      location: {
+        lat: 52.370216,
+        lng: 4.895168,
+        zoom: 10,
+      },
+    },
+
+    host: {
+      avatar: `img/1.png`,
+      id: 3,
+      isPro: true,
+      name: `Angelina`,
+    },
+
+    images: [`img/1.png`, `img/2.png`],
+
+    location: {
+      lat: 52.35514938496378,
+      lng: 4.673877537499948,
+      zoom: 8,
+    },
   },
+
   {
-    "price": 180,
-    "title": `Nice, cozy, warm big bed apartment`,
-    "type": `Apartment`,
-    "img": `img/apartment-03.jpg`,
-    "rating": 100,
-    "is_favorite": false,
-    "is_premium": true,
-    "id": 4,
+    id: 4,
+    name: `Beautiful luxurious apartment at great location`,
+    rating: 4,
+    price: 120,
+    type: `Apartment`,
+    isFavorite: false,
+    isPremium: false,
+    previewImage: `img/1.png`,
+
+    bedrooms: 3,
+    maxAdults: 4,
+    description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.`,
+    goods: [`Heating`, `Kitchen`, `Cable TV`, `Washing machine`, `Coffee machine`, `Dishwasher`],
+
+    city: {
+      name: `Drezden`,
+      location: {
+        lat: 52.370216,
+        lng: 4.895168,
+        zoom: 10,
+      },
+    },
+
+    host: {
+      avatar: `img/1.png`,
+      id: 3,
+      isPro: true,
+      name: `Angelina`,
+    },
+
+    images: [`img/1.png`, `img/2.png`],
+
+    location: {
+      lat: 52.35514938496378,
+      lng: 4.673877537499948,
+      zoom: 8,
+    },
   },
-  {
-    "price": 80,
-    "title": `Wood and stone place`,
-    "type": `Private room`,
-    "img": `img/room.jpg`,
-    "rating": 80,
-    "is_favorite": false,
-    "is_premium": false,
-    "id": 5,
-  }
 ];
-
-
-export default OFFERS;

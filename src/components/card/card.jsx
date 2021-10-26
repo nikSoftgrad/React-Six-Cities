@@ -1,9 +1,10 @@
 import React from "react";
-import PropTypes from "prop-types";
+import offersPropsTypes from "../../prop-types/offers";
+import Rating from "../elements/rating";
 
 const Card = (props) => {
   const {offer} = props;
-  const {price, title, type, rating, img, is_premium: isPremium, is_favorite: isFavorite} = offer;
+  const {name, price, rating, type, isFavorite, isPremium, previewImage} = offer;
 
   return (
     <article className="cities__place-card place-card">
@@ -17,7 +18,7 @@ const Card = (props) => {
         <a href="#">
           <img
             className="place-card__image"
-            src={img}
+            src={previewImage}
             width={260}
             height={200}
             alt="Place image"
@@ -38,13 +39,10 @@ const Card = (props) => {
           </button>
         </div>
         <div className="place-card__rating rating">
-          <div className="place-card__stars rating__stars">
-            <span style={{width: rating + `%`}} />
-            <span className="visually-hidden">Rating</span>
-          </div>
+          <Rating rating={rating} />
         </div>
         <h2 className="place-card__name">
-          <a href="#">{title}</a>
+          <a href="#">{name}</a>
         </h2>
         <p className="place-card__type">{type}</p>
       </div>
@@ -54,16 +52,7 @@ const Card = (props) => {
 };
 
 Card.propTypes = {
-  offer: PropTypes.shape({
-    "id": PropTypes.number.isRequired,
-    "price": PropTypes.number.isRequired,
-    "title": PropTypes.string.isRequired,
-    "type": PropTypes.string.isRequired,
-    "img": PropTypes.string.isRequired,
-    "rating": PropTypes.number.isRequired,
-    "is_favorite": PropTypes.bool.isRequired,
-    "is_premium": PropTypes.bool.isRequired,
-  })
+  offer: offersPropsTypes,
 };
 
 export default Card;
