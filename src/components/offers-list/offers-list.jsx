@@ -4,7 +4,7 @@ import offersPropsTypes from "../../prop-types/offers";
 import Card from "../card/card";
 
 const OffersList = (props) => {
-  const {offers} = props;
+  const {offers, onOfferMouseEnter, onOfferMouseLeave} = props;
 
   return (
     <div className="cities__places-list places__list tabs__content">
@@ -15,6 +15,8 @@ const OffersList = (props) => {
           <Card
             key={id}
             offer={offer}
+            onOfferMouseEnter={onOfferMouseEnter}
+            onOfferMouseLeave={onOfferMouseLeave}
           />
         );
       })}
@@ -24,6 +26,8 @@ const OffersList = (props) => {
 
 OffersList.propTypes = {
   offers: PropTypes.arrayOf(offersPropsTypes).isRequired,
+  onOfferMouseEnter: PropTypes.func.isRequired,
+  onOfferMouseLeave: PropTypes.func.isRequired,
 };
 
 export default OffersList;

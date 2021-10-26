@@ -16,8 +16,8 @@ const CardFavoriteList = (props) => {
 
   return (
     <ul className="favorites__list">
-      {cities.map((city, i) => (
-        <li className="favorites__locations-items" key={i}>
+      {cities.map((city) => (
+        <li className="favorites__locations-items" key={city}>
           <div className="favorites__locations locations locations--current">
             <div className="locations__item">
               <a className="locations__item-link" href="#">

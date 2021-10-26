@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {Link} from "react-router-dom";
 import OffersList from "../../offers-list/offers-list";
 import PropTypes from "prop-types";
@@ -6,6 +6,15 @@ import offersPropsTypes from "../../../prop-types/offers";
 
 const MainScreen = (props) => {
   const {offers} = props;
+  const [offerActive, setOfferActive] = useState(null);
+
+  const onOfferMouseEnter = (id) =>{
+    setOfferActive(id);
+  };
+
+  const onOfferMouseLeave = () =>{
+    setOfferActive(null);
+  };
 
   return (
     <div className="page page--gray page--main">
@@ -95,7 +104,11 @@ const MainScreen = (props) => {
                   <li className="places__option" tabIndex="0">Top rated first</li>
                 </ul>
               </form>
-              <OffersList offers={offers}/>
+              <OffersList
+                offers={offers}
+                onOfferMouseEnter={onOfferMouseEnter}
+                onOfferMouseLeave={onOfferMouseLeave}
+              />
             </section>
             <div className="cities__right-section">
               <section className="cities__map map"></section>
