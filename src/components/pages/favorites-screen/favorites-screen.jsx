@@ -1,7 +1,10 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import PropTypes from "prop-types";
+import offersPropsTypes from "../../../prop-types/reviews";
 
-const FavoriteScreen = () => {
+const FavoriteScreen = (props) => {
+  const {offers} = props;
 
   return (
     <React.Fragment>
@@ -243,5 +246,8 @@ const FavoriteScreen = () => {
   );
 };
 
+FavoriteScreen.propTypes = {
+  offers: PropTypes.arrayOf(offersPropsTypes).isRequired,
+};
 
 export default FavoriteScreen;

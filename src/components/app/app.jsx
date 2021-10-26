@@ -23,7 +23,7 @@ const App = (props) => {
           <AuthScreen />
         </Route>
         <Route exact path="/favorites">
-          <FavoriteScreen />
+          <FavoriteScreen offers="offers"/>
         </Route>
         <Route exact path="/offer:id">
           <RoomScreen reviews={reviews}/>
