@@ -11,10 +11,10 @@ const Rating = (props) => {
   };
 
   return (
-    <div className="place-card__stars rating__stars">
+    <>
       <span style={{width: `${percentStyle()}`}} />
       <span className="visually-hidden">Rating</span>
-    </div>
+    </>
   );
 };
 

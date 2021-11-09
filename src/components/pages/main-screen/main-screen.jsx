@@ -4,7 +4,6 @@ import OffersList from "../../offers-list/offers-list";
 import PropTypes from "prop-types";
 import offersPropsTypes from "../../../prop-types/offers";
 import cityPropsTypes from "../../../prop-types/city";
-import {CITIES} from "../../../const";
 import Map from "../../map/map";
 
 const MainScreen = (props) => {

@@ -41,7 +41,9 @@ const Card = (props) => {
           </button>
         </div>
         <div className="place-card__rating rating">
-          <Rating rating={rating} />
+          <div className="place-card__stars rating__stars">
+            <Rating rating={rating} />
+          </div>
         </div>
         <h2 className="place-card__name">
           <Link to="/offer:id">{name}</Link>

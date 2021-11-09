@@ -1,35 +1,31 @@
 import React from "react";
-import {Link} from "react-router-dom";
 import offersPropsTypes from "../../prop-types/offers";
 import Rating from "../elements/rating";
 
-const CardFavorite = (props) =>{
-  const {offer} = props;
-  const {name, price, type, rating} = offer;
+const NearItem = ({offer}) => {
+  const {rating, price, type, name, isFavorite} = offer;
 
   return (
-    <article className="favorites__card place-card">
-      <div className="favorites__image-wrapper place-card__image-wrapper">
+    <article className="near-places__card place-card">
+      <div className="near-places__image-wrapper place-card__image-wrapper">
         <a href="#">
           <img
             className="place-card__image"
-            src="img/apartment-small-03.jpg"
-            width={150}
-            height={110}
+            src="img/room.jpg"
+            width={260}
+            height={200}
             alt="Place image"
           />
         </a>
       </div>
-      <div className="favorites__card-info place-card__info">
+      <div className="place-card__info">
         <div className="place-card__price-wrapper">
           <div className="place-card__price">
             <b className="place-card__price-value">€{price}</b>
-            <span className="place-card__price-text">
-          /&nbsp;night
-            </span>
+            <span className="place-card__price-text">/&nbsp;night</span>
           </div>
           <button
-            className="place-card__bookmark-button place-card__bookmark-button--active button"
+            className={`place-card__bookmark-button ${isFavorite && `place-card__bookmark-button--active`} button`}
             type="button"
           >
             <svg
@@ -44,11 +40,11 @@ const CardFavorite = (props) =>{
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
-            <Rating rating={rating} />
+            <Rating rating={rating}/>
           </div>
         </div>
         <h2 className="place-card__name">
-          <Link to="/offer:id">{name}</Link>
+          <a href="#">{name}</a>
         </h2>
         <p className="place-card__type">{type}</p>
       </div>
@@ -56,8 +52,8 @@ const CardFavorite = (props) =>{
   );
 };
 
-CardFavorite.propTypes = {
-  offer: offersPropsTypes
+NearItem.propTypes = {
+  offer: offersPropsTypes,
 };
 
-export default CardFavorite;
+export default NearItem;
