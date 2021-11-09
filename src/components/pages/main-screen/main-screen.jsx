@@ -3,11 +3,12 @@ import {Link} from "react-router-dom";
 import OffersList from "../../offers-list/offers-list";
 import PropTypes from "prop-types";
 import offersPropsTypes from "../../../prop-types/offers";
+import cityPropsTypes from "../../../prop-types/city";
 import {CITIES} from "../../../const";
 import Map from "../../map/map";
 
 const MainScreen = (props) => {
-  const {offers} = props;
+  const {offers, city} = props;
   const [offerActive, setOfferActive] = useState(null);
 
   const onOfferMouseEnter = (id) =>{
@@ -113,7 +114,9 @@ const MainScreen = (props) => {
               />
             </section>
             <div className="cities__right-section">
-              <Map city={CITIES[0]} offers={offers}/>
+              <section className="cities__map map">
+                <Map city={city} offers={offers} offerActive={offerActive}/>
+              </section>
             </div>
           </div>
         </div>
@@ -123,6 +126,7 @@ const MainScreen = (props) => {
 };
 
 MainScreen.propTypes = {
+  city: cityPropsTypes,
   offers: PropTypes.arrayOf(offersPropsTypes).isRequired,
 };
 

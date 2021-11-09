@@ -8,6 +8,7 @@ import AuthScreen from "../pages/auth-screen/auth-screen";
 import FavoriteScreen from "../pages/favorites-screen/favorites-screen";
 import RoomScreen from "../pages/room-screen/room-screen";
 import NotFoundPage from "../pages/not-found-page/not-found-page";
+import {CITIES} from "../../const";
 
 
 const App = (props) => {
@@ -17,7 +18,7 @@ const App = (props) => {
     <BrowserRouter>
       <Switch>
         <Route exact path="/">
-          <MainScreen offers={offers}/>
+          <MainScreen offers={offers} city={CITIES[0]}/>
         </Route>
         <Route exact path="/login">
           <AuthScreen />
@@ -26,7 +27,7 @@ const App = (props) => {
           <FavoriteScreen offers={offers}/>
         </Route>
         <Route exact path="/offer:id">
-          <RoomScreen reviews={reviews}/>
+          <RoomScreen offers={offers} reviews={reviews} city={CITIES[0]}/>
         </Route>
         <Route>
           <NotFoundPage />

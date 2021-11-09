@@ -2,10 +2,12 @@ import React from "react";
 import {Link} from "react-router-dom";
 import PropTypes from "prop-types";
 import reviewsPropsTypes from "../../../prop-types/reviews";
+import offersPropsTypes from "../../../prop-types/offers";
+import cityPropsTypes from "../../../prop-types/city";
 import ReviewForm from "../../review-form/review-form";
 
 const RoomScreen = (props) => {
-  const {reviews} = props;
+  const {reviews, offers, city} = props;
 
   return (
     <React.Fragment>
@@ -234,7 +236,8 @@ const RoomScreen = (props) => {
                 </section>
               </div>
             </div>
-            <section className="property__map map" />
+            <section className="property__map map">
+            </section>
           </section>
           <div className="container">
             <section className="near-places places">
@@ -384,6 +387,8 @@ const RoomScreen = (props) => {
 };
 
 RoomScreen.propTypes = {
+  offers: PropTypes.arrayOf(offersPropsTypes).isRequired,
+  city: cityPropsTypes,
   reviews: PropTypes.arrayOf(reviewsPropsTypes).isRequired,
 };
 
